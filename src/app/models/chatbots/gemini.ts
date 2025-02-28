@@ -1,0 +1,3 @@
+class Gemini implements Chatbot {
+
+}

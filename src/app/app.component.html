@@ -1,0 +1,17 @@
+<main class="container">
+  <div id="header">
+    <span>{{ title }}</span>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-chat-session-list />
+    </div>
+    <div class="col">
+      <app-chat-conversation />
+      <app-chat-input />
+    </div>
+  </div>
+</main>
+
+<router-outlet />
