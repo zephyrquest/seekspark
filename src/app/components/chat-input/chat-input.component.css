@@ -1,0 +1,12 @@
+#chatInputContainer .row {
+  align-items: center;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button {
+  height: 70px;
+}
