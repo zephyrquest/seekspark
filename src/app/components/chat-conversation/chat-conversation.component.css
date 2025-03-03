@@ -7,10 +7,13 @@
 
 .user-message {
   margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .chatbot-message {
-
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .card-footer p {

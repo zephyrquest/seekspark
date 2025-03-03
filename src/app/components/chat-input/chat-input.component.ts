@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import {ChatbotService} from "../../services/chatbot.service";
+import {MessageService} from "../../services/message.service";
 import {NgIf} from "@angular/common";
 
 @Component({
@@ -15,20 +15,15 @@ import {NgIf} from "@angular/common";
 })
 export class ChatInputComponent {
   text: string = '';
-  output: string = '';
 
-  constructor(private chatbotService: ChatbotService) {}
+  constructor(private chatbotService: MessageService) {}
 
-  async handleSendMessage(): Promise<void> {
+  async handleSendButtonClick(): Promise<void> {
     if(!this.text.trim()) {
       return;
     }
 
-    console.log('Message sent:', this.text);
-
-    this.output = 'Generating response...';
-    this.output = await this.chatbotService.generateText(this.text);
-
+    await this.chatbotService.handleChatbotResponseGeneration(this.text);
     this.text = '';
   }
 }

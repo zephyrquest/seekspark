@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Message} from "../../models/message";
 import {NgClass, NgForOf} from "@angular/common";
+import {MessageService} from "../../services/message.service";
 
 @Component({
   selector: 'app-chat-conversation',
@@ -12,14 +13,14 @@ import {NgClass, NgForOf} from "@angular/common";
   templateUrl: './chat-conversation.component.html',
   styleUrl: './chat-conversation.component.css'
 })
-export class ChatConversationComponent {
-   messages: Message[] = [
-     new Message('Ask me anything!', 'chatbot'),
-     new Message('Who are you?', 'user'),
-     new Message('I\'m a chatbot.', 'chatbot'),
-     new Message('What is the capital of Switzerland?', 'user'),
-     new Message('The capital of Switzerland is Bern.', 'chatbot'),
-     new Message('And of Italy?', 'user'),
-     new Message('The capital of Italy is Rome.', 'chatbot')
-  ];
+export class ChatConversationComponent implements OnInit {
+   messages: Message[] = [];
+
+   constructor(private chatbotService: MessageService) {}
+
+  ngOnInit(): void {
+    this.chatbotService.messages$.subscribe((messages) => {
+      this.messages = messages;
+    });
+  }
 }

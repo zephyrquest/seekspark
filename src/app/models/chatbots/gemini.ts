@@ -1,12 +1,13 @@
 import {Chatbot} from "./chatbot";
 import {GoogleGenerativeAI} from "@google/generative-ai";
+import {UserConfig} from "../../../assets/user.config";
 
 export class Gemini implements Chatbot {
   private genAI: GoogleGenerativeAI;
   private model: any;
 
   constructor() {
-    this.genAI = new GoogleGenerativeAI('');
+    this.genAI = new GoogleGenerativeAI(UserConfig.API_KEY);
     this.model = this.genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
   }
 
