@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Message} from "../../models/message";
 import {NgClass, NgForOf} from "@angular/common";
-import {MessageService} from "../../services/message.service";
+import {ConversationService} from "../../services/conversation.service";
 
 @Component({
   selector: 'app-chat-conversation',
@@ -16,10 +16,10 @@ import {MessageService} from "../../services/message.service";
 export class ChatConversationComponent implements OnInit {
    messages: Message[] = [];
 
-   constructor(private chatbotService: MessageService) {}
+   constructor(private conversationService: ConversationService) {}
 
   ngOnInit(): void {
-    this.chatbotService.messages$.subscribe((messages) => {
+    this.conversationService.messages$.subscribe((messages) => {
       this.messages = messages;
     });
   }
