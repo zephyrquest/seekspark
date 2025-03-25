@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ChatSessionListComponent } from './components/chat-session-list/chat-session-list.component';
 import { ChatConversationComponent } from './components/chat-conversation/chat-conversation.component';

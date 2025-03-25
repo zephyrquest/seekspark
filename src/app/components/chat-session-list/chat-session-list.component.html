@@ -1,1 +1,10 @@
-<p>chat-session-list works!</p>
+<div id="chatSessionListContainer">
+  <div *ngFor="let chatSession of chatSessions">
+    <b *ngIf="chatSessionSelected?.id === chatSession.id" (click)="handleChatSessionClick(chatSession.id)">
+      {{ chatSession.name }}
+    </b>
+    <span *ngIf="chatSessionSelected?.id !== chatSession.id" (click)="handleChatSessionClick(chatSession.id)">
+      {{ chatSession.name }}
+    </span>
+  </div>
+</div>
