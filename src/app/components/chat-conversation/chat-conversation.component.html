@@ -1,12 +1,12 @@
 <div id="chatConversationContainer">
   <div *ngFor="let message of messages">
-    <div class="card col-8"
+    <div
          [ngClass]="{'user-message': message.role === 'user', 'chatbot-message': message.role === 'chatbot'}">
-      <div class="card-body">
-        <p class="card-text">{{ message.text }}</p>
+      <div>
+        <p>{{ message.text }}</p>
       </div>
-      <div class="card-footer">
-        <p class="text-body-secondary">{{ message.role }}</p>
+      <div>
+        <p>{{ message.role }}</p>
       </div>
     </div>
   </div>
