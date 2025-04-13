@@ -1,9 +1,7 @@
-<div id="chatSessionListContainer">
-  <div *ngFor="let chatSession of chatSessions"
-       class="pl-8 pr-8 pt-3 pb-3 text-lg border"
-       [ngClass]="chatSessionSelected?.id === chatSession.id ? 'bg-sky-500' : 'hover:bg-sky-700 hover:cursor-pointer'"
-       (click)="handleChatSessionClick(chatSession.id)">
-    <i class="fa-regular fa-comment"></i>
-    {{ chatSession.name }}
-  </div>
+<div *ngFor="let chatSession of chatSessions"
+     class="pl-8 pr-8 pt-3 pb-3 text-lg border"
+     [ngClass]="chatSessionSelected?.id === chatSession.id ? 'bg-sky-500' : 'hover:bg-sky-700 hover:cursor-pointer'"
+     (click)="handleChatSessionClick(chatSession.id)">
+  <i class="fa-regular fa-comment"></i>
+  {{ chatSession.name }}
 </div>
