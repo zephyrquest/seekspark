@@ -1,12 +1,9 @@
 <div id="chatInputContainer">
-  <div>
-    <div>
-      <textarea [(ngModel)]="text" [placeholder]="chatbotName ? 'Ask ' + chatbotName : ''"></textarea>
-    </div>
-    <div>
-      <button type="button" (click)="handleSendButtonClick()">
-        <i class="fa-solid fa-paper-plane"></i>
-      </button>
-    </div>
+  <div class="flex flex-row justify-center">
+    <textarea class="basis-2/3 p-5 border rounded-lg" [(ngModel)]="text" [placeholder]="chatbotName ? 'Ask ' + chatbotName : ''">
+    </textarea>
+    <button class="border rounded-lg p-4 ml-1 hover:cursor-pointer hover:bg-sky-200" type="button" (click)="handleSendButtonClick()">
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
   </div>
 </div>

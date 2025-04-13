@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { ChatSession } from "../../models/chatsession"
-import {NgForOf, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {ConversationService} from "../../services/conversation.service";
 
 @Component({
@@ -8,7 +8,8 @@ import {ConversationService} from "../../services/conversation.service";
   standalone: true,
   imports: [
     NgForOf,
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './chat-session-list.component.html',
   styleUrl: './chat-session-list.component.css'
